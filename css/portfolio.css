@@ -1,0 +1,85 @@
+.portfolio {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 120px 0;
+}
+
+.portfolio-title {
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #2e2f42;
+  margin-bottom: 72px;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap; /*  дозволяє переносити картки на новий рядок */
+  column-gap: 24px; /* відступ між колонками */
+  row-gap: 48px; /* відступ між рядками */
+}
+
+.portfolio-item {
+  width: calc(
+    (100% - 48px) / 3
+  ); /*рахуємо 100%ширини мінус 
+    два колумнгепа по 24 і ділити на 3 картинки*/
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); /* плавна зміна тіні */
+}
+
+.portfolio-item:hover {
+  box-shadow:
+    0px 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0 rgba(46, 47, 66, 0.08); /* tinj pry navedenni*/
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  transform: translateY(0); /* povernennia v normalne polozhennia*/
+}
+
+.portfolio-thumb {
+  position: relative; /*pozycionyvannia overleyu*/
+  overflow: hidden; /* obrizajemo vse sho vuchodutj za mezhi kartunknu*/
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  background-color: #4d5ae5; /* kolir fony */
+  color: #f4f4fd; /* kolir texty CLOUD */
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  /* pozcatkowyj stan zmizsenyj vnyz na 100%*/
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); /* plavnyj rych*/
+}
+
+.portfolio-content {
+  padding: 32px 16px; /* внутрішні відступи 32пкс зверху-знизу 
+    і 16пкс ліво\право.шоб текст не торкався рамок */
+  border: 1px solid #e7e9fc; /* тонка рамка навколо тексту */
+  border-top: none; /*прибираємо рамку зверху, шоб не було подвійної рамки*/
+}
+
+.portfolio-subtitle {
+  font-weight: 500; /* товщина шрифту медіум */
+  font-size: 20px; /* розмір букв */
+  line-height: 1.2; /* висота рядка 24пкс/20пкс=1,2 */
+  letter-spacing: 0.02em; /* відступ між буквами */
+  color: #2e2f42;
+  margin-bottom: 8px;
+}
+
+.portfolio-text {
+  font-size: 16px;
+  line-height: 1.5; /* висота рядка */
+  letter-spacing: 0.02em;
+  color: #434455;
+}
